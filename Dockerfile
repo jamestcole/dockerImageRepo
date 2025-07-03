@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN curl -k -s "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
     && unzip -q awscliv2.zip \
-    && ./awsinstall \
+    && ./aws/install \
     && rm -rf awscliv2.zip aws/
 
 # Set working directory
@@ -22,4 +22,4 @@ WORKDIR /app
 COPY . /app
 
 # Default command to run
-CMD ["python3", "main.py"]
+CMD ["/bin/bash"]
